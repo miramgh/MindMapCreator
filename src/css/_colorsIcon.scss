@@ -1,0 +1,223 @@
+.background {
+    width: 10px;
+    background: #FAFFB8;
+    --amount: 20;
+    position: relative;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    cursor: pointer;
+  }
+  
+  $animationDuration: 3s;
+  $amount: 8;
+  $particleRadius: 2vmin;
+  .background span {
+    cursor:pointer;
+    width: $particleRadius * 2;
+    height: $particleRadius * 2;
+    border-radius: $particleRadius;
+    backface-visibility: hidden;
+    position: absolute;
+    animation-name: move;
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 0.8);
+    animation-iteration-count: infinite;
+    animation-duration: $animationDuration;
+    top: calc(50% - #{$particleRadius});
+    left: 50%;
+    transform-origin: ($particleRadius*-1) center;
+  
+    $colors: (
+      #00A5E3,
+      #8DD7BF,
+      #FF96c5,
+      #FFBF65,
+      #CFF800
+    );
+    
+  @for $i from 1 through $amount {
+      &:nth-child(#{$i}) {
+        background: nth($colors, random(length($colors)));
+        animation-delay: ($i / $amount) * $animationDuration * -1;
+        opacity: 0;
+      }
+    }
+  }
+  
+  @keyframes move {
+    0% {
+      transform: scale(1) rotate(0deg) translate3d(0, 0, 1px);
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      z-index: 10;
+      transform: scale(0) rotate(360deg) translate3d(0, 0, 1px);
+    }
+  }
+  @keyframes rotateX {
+    0% {
+      opacity: 0;
+      transform: rotateX(-90deg);
+    }
+    50% {
+      transform: rotateX(-20deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+  }
+.Colors{
+    position: absolute;
+    top: 100%;
+    transition: width 2s, height 2s, transform 2s;
+    animation: rotateX 700ms ease-in-out forwards;
+
+    button{
+      width: 26px;
+      height: 26px;
+      margin: 0;
+      cursor: pointer;
+      
+    }
+   
+     .mint__btn{
+      background-color: #8DD7BF;
+    }
+     .pink__btn{
+      background-color: #FF96c5;
+    }
+     .orange__btn{
+      background-color: #FFBF65;
+    }
+     .yellow__btn{
+      background-color: #CFF800;
+    }
+     .babyblue__btn{
+      background-color: #00A5E3;
+    }
+  }
+ .HideColors{
+    animation: rotateX 1s ease-in-out forwards;
+    display:none;
+ } 
+
+ .mint{
+  .react-flow__edge-path {
+    stroke: #8DD7BF;
+  }
+  .react-flow__edge-path{
+    stroke: #8DD7BF !important;
+    stroke-width: 2px;
+  }
+  .react-flow__node{
+    border: 3px solid #8DD7BF;
+    border-radius: 13px;
+   
+  }
+  rect .react-flow__edge-textbg{
+      fill: #9fefd5;
+  }
+  .react-flow__handle{
+    background: #8DD7BF !important;
+    height: 4px ;
+    border: none;
+  }
+ }
+ .pink{
+  .react-flow__edge-path {
+    stroke: #FF96c5;
+  }
+  .react-flow__edge-path{
+    stroke: #FF96c5 !important;
+    stroke-width: 2px;
+  }
+  .react-flow__node{
+    border: 3px solid #FF96c5;
+    
+   
+  }
+  .react-flow__edge-textbg{
+      fill: #ffc8e1;
+  }
+  .react-flow__handle{
+    background: #FF96c5 !important;
+    height: 4px ;
+    border: none;
+  }
+ }
+ .babyblue{
+  .react-flow__edge-path {
+    stroke: #00A5E3;
+  }
+  .react-flow__edge-path{
+    stroke: #00A5E3 !important;
+    stroke-width: 2px;
+  }
+  .react-flow__node{
+    border: none;
+    border-bottom: 3px solid #00A5E3;
+    background:transparent;
+    .wmde-markdown-color{
+      background:transparent;
+    }
+   
+  }
+  .react-flow__edge-textbg{
+      fill: #7bc7e2;
+  }
+  .react-flow__handle{
+    background: #00A5E3 !important;
+    height: 4px ;
+    border: none;
+  }
+ }
+ .orange{
+  .react-flow__edge-path {
+    stroke: #FFBF65;
+  }
+  .react-flow__edge-path{
+    stroke: #FFBF65 !important;
+    stroke-width: 2px;
+  }
+  .react-flow__node{
+    border: none;
+    border-radius: 13px;
+    border-bottom: 3px solid #FFBF65;
+    padding: 12px 10px;
+
+  }
+  .react-flow__edge-textbg{
+      fill: #fcce8f;
+  }
+  .react-flow__handle{
+    background: transparent !important;
+    height: 7px;
+    border: 3px solid #FFBF65 ; 
+  }
+ }
+ .yellow{
+  .react-flow__edge-path {
+    stroke: #CFF800;
+  }
+  .react-flow__edge-path{
+    stroke: #CFF800 !important;
+    stroke-width: 2px;
+  }
+  .react-flow__node{
+    border: 3px solid #CFF800;
+    border-radius: 13px;
+   
+  }
+  .react-flow__edge-textbg{
+      fill: #cfff4a;
+  }
+  .react-flow__handle{
+    background: #CFF800 !important;
+    height: 4px ;
+    border: none;
+  }
+ }
