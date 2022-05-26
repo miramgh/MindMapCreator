@@ -63,20 +63,8 @@ button {
 }
 
 .btn-primary:hover {
-  background-color: #00A5E3;
+  background-color: var(--action-color-hover);
   color: white;
-}
-
-::-webkit-scrollbar {
-  width: 0.5em;
-}
-
-::-webkit-scrollbar-track {
-  background-color: lightcyan;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #00A5E3;
 }
 
 .screenshot__btn {
@@ -177,16 +165,8 @@ button {
   flex-direction: column;
   height: fit-content;
   z-index: 50000;
-  height: 280px;
+  height: 51%;
   max-width: 50%;
-}
-
-@media (max-width: 39.9375em) {
-  .shown__nodesInj {
-    height: 100px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
 }
 
 .shown__nodesInj .options {
@@ -199,33 +179,12 @@ button {
   padding: 5px;
 }
 
-@media (max-width: 63.9375em) {
-  .shown__nodesInj .options .node__nav {
-    width: 100%;
-  }
-}
-
 .shown__nodesInj .options .node__nav .container {
   z-index: 500000;
 }
 
 .shown__nodesInj .options .node__nav button:hover {
   background-color: #eeeeee;
-}
-
-@media (max-width: 63.9375em) {
-  .shown__nodesInj .wmde-markdown-var.w-md-editor.w-md-editor-show-live {
-    width: 237px;
-  }
-  .shown__nodesInj .container .wmde-markdown.wmde-markdown-color.w-md-editor-preview {
-    display: none;
-  }
-  .shown__nodesInj .w-md-editor-toolbar {
-    height: fit-content;
-  }
-  .shown__nodesInj .w-md-editor-aree.w-md-editor-input {
-    width: 100%;
-  }
 }
 
 .react-flow__minimap {
@@ -244,26 +203,6 @@ button {
 .wmde-markdown-var.w-md-editor.w-md-editor-show-live {
   height: 200px;
   width: 500px;
-}
-
-.touchdevice-flow .react-flow__handle {
-  width: 20px;
-  height: 20px;
-  border-radius: 3px;
-  background-color: #9f7aea;
-}
-
-.touchdevice-flow .react-flow__handle.connecting {
-  animation: bounce 1600ms infinite ease-out;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translate(0, -50%) scale(1);
-  }
-  50% {
-    transform: translate(0, -50%) scale(1.1);
-  }
 }
 
 .background {
@@ -295,7 +234,7 @@ button {
 }
 
 .background span:nth-child(1) {
-  background: #FF96c5;
+  background: #CFF800;
   animation-delay: -0.375s;
   opacity: 0;
 }
@@ -307,37 +246,37 @@ button {
 }
 
 .background span:nth-child(3) {
-  background: #FF96c5;
+  background: #CFF800;
   animation-delay: -1.125s;
   opacity: 0;
 }
 
 .background span:nth-child(4) {
-  background: #00A5E3;
+  background: #8DD7BF;
   animation-delay: -1.5s;
   opacity: 0;
 }
 
 .background span:nth-child(5) {
-  background: #CFF800;
+  background: #00A5E3;
   animation-delay: -1.875s;
   opacity: 0;
 }
 
 .background span:nth-child(6) {
-  background: #CFF800;
+  background: #00A5E3;
   animation-delay: -2.25s;
   opacity: 0;
 }
 
 .background span:nth-child(7) {
-  background: #FFBF65;
+  background: #CFF800;
   animation-delay: -2.625s;
   opacity: 0;
 }
 
 .background span:nth-child(8) {
-  background: #00A5E3;
+  background: #8DD7BF;
   animation-delay: -3s;
   opacity: 0;
 }

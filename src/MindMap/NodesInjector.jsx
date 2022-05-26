@@ -3,7 +3,7 @@ import MarkdownEditor from './MarkdownEditor'
 import MDEditor from '@uiw/react-md-editor';
 import rehypeSanitize from "rehype-sanitize";
 
-function NodesInjector({setNode , node  ,toggleInjector , nodes , setNodes}) {
+function NodesInjector({setNode , node  ,toggleInjector , nodes , setNodes, setToggleInjector}) {
     const [content , setContent ]= useState()
     
     
@@ -33,6 +33,7 @@ function NodesInjector({setNode , node  ,toggleInjector , nodes , setNodes}) {
         },
       };
       setNodes((nodes) => nodes.concat(newNode));
+      setToggleInjector('hidden__nodesInj')
     }, [setNodes , value]);
   return (
     <div className={toggleInjector}>

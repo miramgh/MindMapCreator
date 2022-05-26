@@ -89,14 +89,24 @@
   flex-direction: column;
   height: fit-content;
   z-index: 50000;
-  height: 51%;
+  height:280px;
   max-width: 50%;
+  @include breakpoint-down(small){ 
+    height: 100px;
+    overflow-y:scroll ;
+    overflow-x: hidden;
+  }
+
   .options{
     display: flex;
     .node__nav{
       display: flex;
       flex-direction: column;
       padding: 5px;
+      @include breakpoint-down(medium){ 
+        width: 100%;
+       }
+
       .container{
         z-index: 500000;
       }
@@ -105,6 +115,20 @@
       }
     }
 
+  }
+  @include breakpoint-down(medium){    
+    .wmde-markdown-var.w-md-editor.w-md-editor-show-live {
+      width:237px;
+    }
+    .container .wmde-markdown.wmde-markdown-color.w-md-editor-preview{
+      display:none;
+    }
+    .w-md-editor-toolbar{
+      height: fit-content;
+    }
+    .w-md-editor-aree.w-md-editor-input{
+      width: 100%;
+    }
   }
 
 }
@@ -128,3 +152,23 @@
   height: 200px;
   width:500px;
 }
+.touchdevice-flow .react-flow__handle {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: #9f7aea;
+}
+
+.touchdevice-flow .react-flow__handle.connecting {
+  animation: bounce 1600ms infinite ease-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(0, -50%) scale(1);
+  }
+  50% {
+    transform: translate(0, -50%) scale(1.1);
+  }
+}
+

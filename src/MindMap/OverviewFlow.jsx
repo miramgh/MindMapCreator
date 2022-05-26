@@ -71,6 +71,18 @@ const OverviewFlow = () => {
    // console.log(toggleInjector)
   }
 
+  const changeEdge = (edgeId) => {
+    setEdges((edges) =>
+      edges.map((edge) => {
+        if (edges.id === edgeId) {
+          edge.label ="clicked";
+        }
+
+        return { ...edges };
+      })
+    );
+  };
+
   return (
     <div className={styles}>
       <button onClick={downloadImage} className="screenshot__btn">
@@ -118,6 +130,7 @@ const OverviewFlow = () => {
                  toggleInjector= {toggleInjector}
                  nodes = {nodes}
                  setNodes = {setNodes}
+                 setToggleInjector ={setToggleInjector}
         />
 
       
